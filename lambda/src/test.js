@@ -4,7 +4,8 @@ const {function1} = require('lib1');
 const {function2} = require('lib2');
 
 exports.handler = async (event) => {
-    console.info(function1("test"))
-    console.info(function2("test"))
-    return event
+    return {
+        function1: function1("test"),
+        function2: function2("test")
+    }
 }
