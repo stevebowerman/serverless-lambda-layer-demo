@@ -1,0 +1,20 @@
+{
+  "name": "layer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "npm install && cp -R src/ node_modules && rm -Rf dist && mkdir -p dist/nodejs && cp -R node_modules dist/nodejs ",
+    "deploy": "npm run build && sls deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "jest": "^27.0.4"
+  }
+}

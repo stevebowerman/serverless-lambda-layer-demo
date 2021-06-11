@@ -1,0 +1,24 @@
+service: layer-test-layer
+
+package:
+  individually: true
+  
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: eu-west-1
+  stage: ${opt:stage,'dev'}
+  memorySize: 128
+  lambdaHashingVersion: 20201221
+  
+layers:
+  layer1:
+    path: ./dist
+
+resources:
+  Outputs:
+    Layer1Export:
+      Value:
+        Ref: Layer1LambdaLayer
+      Export:
+        Name: Layer1LambdaLayer
